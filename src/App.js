@@ -1,21 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          React components library created from the OpenClassroom HRnet project by Christelle Barret
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
+          href="https://github.com/OpenClassrooms-Student-Center/P12_Front-end.git"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+        View the original project by OC  
+        </a>
+        <a
+          className="App-link"
+          href="https://github.com/BARRETCHRIS/HRnet.git"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+        See the finished project by CB 
         </a>
       </header>
     </div>

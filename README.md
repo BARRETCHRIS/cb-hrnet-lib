@@ -1,70 +1,161 @@
-# Getting Started with Create React App
+# cb-hrnet-lib
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Une bibliothèque de composants React réutilisables conçue pour simplifier le développement d'interfaces utilisateur. Cette bibliothèque contient des composants essentiels comme un modal et un champ de sélection automatique.
 
-## Available Scripts
+## Table des matières
 
-In the project directory, you can run:
+- [Description](#description)
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+- [Utilisation](#utilisation)
+  - [Modal](#modal)
+  - [AutoComplete](#autocomplete)
+  - [Validation des champs](#validation-des-champs)
+- [Contribuer](#contribuer)
+- [Licence](#licence)
+- [Auteur](#auteur)
 
-### `yarn start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+La bibliothèque **cb-hrnet-lib** comprend deux composants principaux :
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Modal** : Un composant pour afficher des fenêtres modales.
+2. **AutoComplete** : Un composant permettant aux utilisateurs de sélectionner des options à partir d'une liste déroulante.
 
-### `yarn test`
+En plus de ces composants, la bibliothèque propose des fonctions de validation pour des formulaires.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Prérequis
 
-### `yarn build`
+Avant d'installer cette bibliothèque, assurez-vous d'avoir les éléments suivants :
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Node.js** : Assurez-vous d'avoir installé Node.js sur votre machine. Vous pouvez le télécharger depuis [nodejs.org](https://nodejs.org/).
+- **Yarn** : Cette bibliothèque est optimisée pour Yarn. Si vous ne l'avez pas encore installé, vous pouvez l'installer en suivant les instructions sur [yarnpkg.com](https://classic.yarnpkg.com/en/docs/install).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pour installer la bibliothèque, exécutez la commande suivante dans votre projet React :
 
-### `yarn eject`
+```bash
+yarn add cb-hrnet-lib
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Utilisation des composants de la librairie
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Modal
+**Description : ** Le composant Modal est un modal simple que vous pouvez utiliser pour afficher des informations ou des formulaires.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Exemple : **
+```javascript
+import React, { useState } from 'react';
+import Modal from 'cb-hrnet-lib/Modal';
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+const MyComponent = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-## Learn More
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  return (
+    <div>
+      <button onClick={handleOpen}>Open Modal</button>
+      <Modal isOpen={isOpen} onClose={handleClose}>
+        <h1>My Modal</h1>
+        <p>This is a simple modal example.</p>
+      </Modal>
+    </div>
+  );
+};
 
-### Code Splitting
+export default MyComponent;
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Props : ** 
+| Prop        | Type       | Description                                    |
+|-------------|------------|------------------------------------------------|
+| `isOpen   ` | `boolean`  | indique si le modal doit être ouvert ou non.   |
+| `onClose `  | `function` | Fonction à appeler pour fermer le modal.       |
+| `children`  | `node`     | Contenu à afficher dans le modal.              |
 
-### Analyzing the Bundle Size
+### AutoComplete
+**Description : ** Le composant AutoComplete permet aux utilisateurs de sélectionner une option parmi une liste d'options.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**Exemple : **
+```javascript
+import React from 'react';
+import AutoComplete from 'cb-hrnet-lib/AutoComplete';
 
-### Making a Progressive Web App
+const options = [
+  { name: "California", abbreviation: "CA" },
+  { name: "Texas", abbreviation: "TX" },
+  { name: "Florida", abbreviation: "FL" }
+];
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+const MyComponent = () => {
+  const handleSelect = (option) => {
+    console.log('Selected option:', option);
+  };
 
-### Advanced Configuration
+  return (
+    <div>
+      <h2>Select a State</h2>
+      <AutoComplete options={options} onSelect={handleSelect} />
+    </div>
+  );
+};
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+export default MyComponent;
 
-### Deployment
+**Props : ** 
+| Prop        | Type       | Description                                               |
+|-------------|------------|-----------------------------------------------------------|
+| `options  ` | `array `   | Liste d'options à afficher dans le sélecteur.             |
+| `onSelect ` | `function` | Fonction appeler lorsque l'utilisateur sélectionne option.|
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Validation des inputs de formulaires
+**Description : ** Cette bibliothèque inclut également des fonctions de validation pour les champs de formulaire. Vous pouvez valider des champs comme le prénom, le nom, la rue, la ville et le code postal.
 
-### `yarn build` fails to minify
+**Exemple : **
+```javascript
+import { validateForm } from 'cb-hrnet-lib/validation';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+const fields = {
+  firstName: 'John',
+  lastName: 'Doe',
+  street: '123 Main St',
+  city: 'Anytown',
+  zipCode: '12345'
+};
+
+const errors = validateForm(fields);
+console.log(errors); // Affiche les erreurs de validation, le cas échéant.
+
+**Props : ** 
+| champ       | Type       | Description                                    |
+|-------------|------------|------------------------------------------------|
+| `fields `   | `object `  | Un objet contenant les champs à valider.       |
+| `return `   | `object `  | Objet contenant les erreurs pour chaque champ. |
+
+**Props : ** 
+| champ      | Regex                    | Description                  |
+|------------|--------------------------|------------------------------|
+| `firstName`|`/^[A-Za-z]{2,}$/ `       | Au moins 2 lettres.          |
+| `lastName `|`/^[A-Za-z]{2,}$/t`       | Au moins 2 lettres.          |
+| `street`   |`/^[A-Za-z0-9\s,'-]{3,}$/`| Lettres, chiffres et certains caractères spéciaux.|
+| `city `    |`/^[A-Za-z\s]{2,}$/`      | Lettres et espaces seulement.|
+| `zipCode`  |`/^\d{5}$/`               | Code postal à 5 chiffres.    |
+
+
+## Contribuer
+
+Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
+
+Forkez le dépôt.
+Créez votre branche (git checkout -b feature/YourFeature).
+Committez vos changements (git commit -m 'Add some feature').
+Poussez vers la branche (git push origin feature/YourFeature).
+Ouvrez une pull request.
+Licence
+Distribué sous la licence MIT. Voir LICENSE pour plus d'informations.

@@ -1,21 +1,32 @@
 {
   "name": "cb-hrnet-lib",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^13.0.0",
-    "@testing-library/user-event": "^13.2.1",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.0"
-  },
+  "version": "1.0.0",
+  "description": "Une bibliothèque de composants React réutilisables.",
+  "main": "src/components/index.js",
+  "private": false,
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "babel src/components --out-dir lib --copy-files",
     "test": "react-scripts test",
+    "prepublishOnly": "yarn run build",
     "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.7",
+    "@babel/core": "^7.25.7",
+    "@babel/preset-env": "^7.25.7",
+    "@babel/preset-react": "^7.25.7",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^13.2.1"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +45,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "author": "Christelle Barret / Crazy Beasty",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "components",
+    "library"
+  ],
+  "homepage": "https://github.com/votre-utilisateur/cb-hrnet-lib#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/votre-utilisateur/cb-hrnet-lib.git"
   }
 }
