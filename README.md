@@ -70,7 +70,7 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default MyComponent;```
 
 **Props : ** 
 | Prop        | Type       | Description                                    |
