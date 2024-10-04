@@ -36,11 +36,11 @@ Avant d'installer cette bibliothèque, assurez-vous d'avoir les éléments suiva
 Pour installer la bibliothèque, exécutez la commande suivante dans votre projet React :
 
 ```bash
-yarn add cb-hrnet-lib
+yarn add cb-hrnet-lib   
 
-## Utilisation des composants de la librairie
+## Utilisation des composants de la librairie    
 
-### Modal
+### Modal    
 **Description : ** Le composant Modal est un modal simple que vous pouvez utiliser pour afficher des informations ou des formulaires.
 
 **Exemple : **
@@ -70,7 +70,7 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;```
+export default MyComponent;    
 
 **Props : ** 
 | Prop        | Type       | Description                                    |
@@ -79,10 +79,10 @@ export default MyComponent;```
 | `onClose `  | `function` | Fonction à appeler pour fermer le modal.       |
 | `children`  | `node`     | Contenu à afficher dans le modal.              |
 
-### AutoComplete
-**Description : ** Le composant AutoComplete permet aux utilisateurs de sélectionner une option parmi une liste d'options.
+### AutoComplete    
+**Description : ** Le composant AutoComplete permet aux utilisateurs de sélectionner une option parmi une liste d'options.    
 
-**Exemple : **
+**Exemple : **    
 ```javascript
 import React from 'react';
 import AutoComplete from 'cb-hrnet-lib/AutoComplete';
@@ -106,18 +106,18 @@ const MyComponent = () => {
   );
 };
 
-export default MyComponent;
+export default MyComponent;    
 
-**Props : ** 
+**Props : **     
 | Prop        | Type       | Description                                               |
 |-------------|------------|-----------------------------------------------------------|
 | `options  ` | `array `   | Liste d'options à afficher dans le sélecteur.             |
 | `onSelect ` | `function` | Fonction appeler lorsque l'utilisateur sélectionne option.|
+    
+### Validation des inputs de formulaires    
+**Description : ** Cette bibliothèque inclut également des fonctions de validation pour les champs de formulaire. Vous pouvez valider des champs comme le prénom, le nom, la rue, la ville et le code postal.    
 
-### Validation des inputs de formulaires
-**Description : ** Cette bibliothèque inclut également des fonctions de validation pour les champs de formulaire. Vous pouvez valider des champs comme le prénom, le nom, la rue, la ville et le code postal.
-
-**Exemple : **
+**Exemple : **    
 ```javascript
 import { validateForm } from 'cb-hrnet-lib/validation';
 
@@ -130,9 +130,9 @@ const fields = {
 };
 
 const errors = validateForm(fields);
-console.log(errors); // Affiche les erreurs de validation, le cas échéant.
+console.log(errors); // Affiche les erreurs de validation, le cas échéant.    
 
-**Props : ** 
+**Props : **     
 | champ       | Type       | Description                                    |
 |-------------|------------|------------------------------------------------|
 | `fields `   | `object `  | Un objet contenant les champs à valider.       |
@@ -148,7 +148,7 @@ console.log(errors); // Affiche les erreurs de validation, le cas échéant.
 | `zipCode`  |`/^\d{5}$/`               | Code postal à 5 chiffres.    |
 
 
-## Contribuer
+## Contribuer    
 
 Les contributions sont les bienvenues ! Si vous souhaitez contribuer à ce projet, veuillez suivre les étapes suivantes :
 
