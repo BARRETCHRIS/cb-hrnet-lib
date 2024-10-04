@@ -53,9 +53,9 @@
     "components",
     "library"
   ],
-  "homepage": "https://github.com/votre-utilisateur/cb-hrnet-lib#readme",
+  "homepage": "https://github.com/BARRETCHRIS/cb-hrnet-lib#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/votre-utilisateur/cb-hrnet-lib.git"
+    "url": "git+https://github.com/BARRETCHRIS/cb-hrnet-lib.git"
   }
 }

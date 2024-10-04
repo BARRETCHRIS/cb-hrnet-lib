@@ -78,6 +78,7 @@ export default MyComponent;
 | `isOpen   ` | `boolean`  | indique si le modal doit être ouvert ou non.   |
 | `onClose `  | `function` | Fonction à appeler pour fermer le modal.       |
 | `children`  | `node`     | Contenu à afficher dans le modal.              |
+    
 
 ### AutoComplete    
 **Description : ** Le composant AutoComplete permet aux utilisateurs de sélectionner une option parmi une liste d'options.    
@@ -114,6 +115,7 @@ export default MyComponent;
 | `options  ` | `array `   | Liste d'options à afficher dans le sélecteur.             |
 | `onSelect ` | `function` | Fonction appeler lorsque l'utilisateur sélectionne option.|
     
+        
 ### Validation des inputs de formulaires    
 **Description : ** Cette bibliothèque inclut également des fonctions de validation pour les champs de formulaire. Vous pouvez valider des champs comme le prénom, le nom, la rue, la ville et le code postal.    
 
