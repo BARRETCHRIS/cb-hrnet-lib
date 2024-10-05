@@ -46,7 +46,7 @@ yarn add cb-hrnet-lib
 **Exemple : **
 ```javascript
 import React, { useState } from 'react';
-import Modal from 'cb-hrnet-lib/Modal';
+import Modal from 'cb-hrnet-lib';
 
 const MyComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -86,7 +86,7 @@ export default MyComponent;
 **Exemple : **    
 ```javascript
 import React from 'react';
-import AutoComplete from 'cb-hrnet-lib/AutoComplete';
+import AutoComplete from 'cb-hrnet-lib';
 
 const options = [
   { name: "California", abbreviation: "CA" },
@@ -121,7 +121,7 @@ export default MyComponent;
 
 **Exemple : **    
 ```javascript
-import { validateForm } from 'cb-hrnet-lib/validation';
+import { validateForm } from 'cb-hrnet-lib';
 
 const fields = {
   firstName: 'John',
