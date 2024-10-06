@@ -36,7 +36,10 @@ Avant d'installer cette bibliothèque, assurez-vous d'avoir les éléments suiva
 Pour installer la bibliothèque, exécutez la commande suivante dans votre projet React :
 
 ```bash
-yarn add cb-hrnet-lib   
+Avec yarn : 
+yarn add cb-hrnet-lib  
+Avec npm :
+npm i cb-hrnet-lib
 
 ## Utilisation des composants de la librairie    
 

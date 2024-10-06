@@ -1,6 +1,6 @@
 {
   "name": "cb-hrnet-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Une bibliothèque de composants React réutilisables.",
   "main": "src/components/index.js",
   "private": false,
